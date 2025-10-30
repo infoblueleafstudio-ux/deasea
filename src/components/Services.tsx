@@ -1,4 +1,5 @@
 import { Palette, Globe, TrendingUp, Layout } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -27,17 +28,27 @@ export default function Services() {
   return (
     <section id="services" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 md:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-20"
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4">
             What we do
           </h2>
           <div className="w-20 h-1 bg-neutral-900 mx-auto"></div>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="group p-8 md:p-10 bg-neutral-50 rounded-2xl hover:bg-neutral-900 transition-all duration-500 hover:shadow-2xl"
             >
               <div className="flex items-start gap-6">
@@ -53,7 +64,7 @@ export default function Services() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

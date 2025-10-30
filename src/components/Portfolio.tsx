@@ -1,18 +1,19 @@
 import { ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
     title: 'Yakitori Haku',
     category: '高級焼き鳥店',
     description: '映像的なUIで表現した、高級感溢れる焼き鳥店のWebサイト',
-    url: '#',
+    url: 'https://yakitorihaku.vercel.app/',
     gradient: 'from-amber-500 to-orange-600'
   },
   {
     title: 'こどもの森幼稚園',
     category: '教育機関Web',
     description: '優しさと柔らかさを表現した、安心感のある幼稚園サイト',
-    url: '#',
+    url: 'https://adago-1-q517.vercel.app/',
     gradient: 'from-emerald-400 to-teal-500'
   }
 ];
@@ -21,17 +22,27 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="py-24 md:py-32 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 md:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-20"
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4">
             Portfolio
           </h2>
           <div className="w-20 h-1 bg-neutral-900 mx-auto"></div>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {projects.map((project, index) => (
-            <a
+            <motion.a
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
+              viewport={{ once: true }}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -57,7 +68,7 @@ export default function Portfolio() {
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-neutral-900 to-neutral-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>

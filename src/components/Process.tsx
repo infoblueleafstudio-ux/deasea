@@ -1,4 +1,5 @@
 import { Search, Pencil, Code, Rocket } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const steps = [
   {
@@ -27,16 +28,29 @@ export default function Process() {
   return (
     <section id="process" className="py-24 md:py-32 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 md:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-20"
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4">
             Process
           </h2>
           <div className="w-20 h-1 bg-neutral-900 mx-auto"></div>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div className="w-16 h-16 bg-neutral-900 rounded-full flex items-center justify-center">
@@ -63,7 +77,7 @@ export default function Process() {
                   <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-neutral-300 rounded-full"></div>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

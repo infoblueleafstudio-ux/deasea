@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -10,21 +11,41 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-700/20 via-transparent to-transparent"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
-        <div className="space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight">
+        <div className="space-y-8">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight"
+          >
             Design × Code × Emotion
-          </h1>
+          </motion.h1>
 
-          <p className="text-xl md:text-2xl lg:text-3xl text-neutral-300 max-w-4xl mx-auto leading-relaxed font-light">
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="text-xl md:text-2xl lg:text-3xl text-neutral-300 max-w-4xl mx-auto leading-relaxed font-light"
+          >
             世界観をデザインで可視化する。
-          </p>
+          </motion.p>
 
-          <p className="text-base md:text-lg text-neutral-400 max-w-3xl mx-auto leading-relaxed pt-4">
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            className="text-base md:text-lg text-neutral-400 max-w-3xl mx-auto leading-relaxed pt-4"
+          >
             経営者・事業者の「想い」を0→1へ。<br className="hidden md:block" />
             ブランドの世界観に合わせてデザインとUI/UXを設計します。
-          </p>
+          </motion.p>
 
-          <div className="pt-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+            className="pt-8"
+          >
             <button
               onClick={scrollToContact}
               className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-neutral-900 rounded-full font-medium text-lg hover:bg-neutral-100 transition-all duration-300 hover:gap-4 hover:shadow-xl"
@@ -32,7 +53,7 @@ export default function Hero() {
               Contact
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
 

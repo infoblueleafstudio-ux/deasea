@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Send, Mail, User, MessageSquare } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -34,7 +35,13 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 md:py-32 bg-white">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16 md:mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-20"
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4">
             Contact
           </h2>
@@ -43,9 +50,15 @@ export default function Contact() {
             プロジェクトのご相談、お見積もりなど<br className="hidden md:block" />
             お気軽にお問い合わせください
           </p>
-        </div>
+        </motion.div>
 
-        <div className="bg-neutral-50 rounded-3xl p-8 md:p-12 shadow-xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-neutral-50 rounded-3xl p-8 md:p-12 shadow-xl"
+        >
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-neutral-700 mb-2">
@@ -121,7 +134,7 @@ export default function Contact() {
               </div>
             )}
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
