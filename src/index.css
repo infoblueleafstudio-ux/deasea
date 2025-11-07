@@ -10,6 +10,11 @@
   body {
     @apply antialiased;
   }
+
+  body.has-custom-cursor,
+  body.has-custom-cursor * {
+    cursor: none !important;
+  }
 }
 
 @layer utilities {
@@ -26,5 +31,60 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+}
+
+@layer components {
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+    z-index: 99999;
+    transition: background-color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+    will-change: transform;
+    opacity: 1;
+  }
+
+  .custom-cursor.is-active {
+    background-color: rgba(255, 255, 255, 0.26);
+    border-color: rgba(255, 255, 255, 0.82);
+  }
+
+  .custom-cursor__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.9;
+  }
+
+  .custom-cursor.is-active .custom-cursor__dot {
+    transform: translate(-50%, -50%) scale(0.75);
+    opacity: 1;
+  }
+
+  .custom-cursor--dark {
+    background-color: rgba(24, 24, 27, 0.85);
+    border-color: rgba(24, 24, 27, 0.8);
+  }
+
+  .custom-cursor--dark .custom-cursor__dot {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .custom-cursor--dark.is-active {
+    background-color: rgba(10, 10, 12, 0.95);
+    border-color: rgba(10, 10, 12, 0.9);
   }
 }

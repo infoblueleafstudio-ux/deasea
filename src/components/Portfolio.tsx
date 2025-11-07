@@ -46,7 +46,8 @@ export default function Portfolio() {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500"
+                data-cursor="dark"
+                className="group block relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 cursor-hover magnetic-target"
             >
               <div className={`h-64 md:h-80 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>

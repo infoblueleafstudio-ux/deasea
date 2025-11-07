@@ -48,7 +48,8 @@ export default function Hero() {
           >
             <button
               onClick={scrollToContact}
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-neutral-900 rounded-full font-medium text-lg hover:bg-neutral-100 transition-all duration-300 hover:gap-4 hover:shadow-xl"
+              data-cursor="dark"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-neutral-900 rounded-full font-medium text-lg hover:bg-neutral-100 transition-all duration-300 hover:gap-4 hover:shadow-xl cursor-hover magnetic-target"
             >
               Contact
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

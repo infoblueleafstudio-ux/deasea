@@ -6,10 +6,11 @@ import About from './components/About';
 import Process from './components/Process';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Layout from './layout';
 
 function App() {
   return (
-    <>
+    <Layout>
       <Preloader />
       <div className="min-h-screen bg-neutral-50">
         <Hero />
@@ -20,7 +21,7 @@ function App() {
         <Contact />
         <Footer />
       </div>
-    </>
+    </Layout>
   );
 }
 
