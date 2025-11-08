@@ -4,15 +4,17 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     title: 'Yakitori Haku',
-    category: '高級焼き鳥店',
-    description: '映像的なUIで表現した、高級感溢れる焼き鳥店のWebサイト',
+    category: 'ブランド体験 × 高級飲食店',
+    description: '“来た人の人生に箔をつける” 体験を UI に落とし込んだ Web デザイン',
+    core: '“来た人の人生に箔をつける” 体験を UI に溶け込ませた設計',
     url: 'https://yakitorihaku.vercel.app/',
     gradient: 'from-amber-500 to-orange-600'
   },
   {
     title: 'こどもの森幼稚園',
-    category: '教育機関Web',
-    description: '優しさと柔らかさを表現した、安心感のある幼稚園サイト',
+    category: '世界観設計 × 教育 / 保育',
+    description: '「子どもの感じる力」を信じる世界観を、余白と柔らかい UI で表現した Web デザイン',
+    core: '“子どもの感じる力” を信じた世界観。余白と柔らかい UI',
     url: 'https://adago-1-q517.vercel.app/',
     gradient: 'from-emerald-400 to-teal-500'
   }
@@ -46,12 +48,13 @@ export default function Portfolio() {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-                data-cursor="dark"
-                className="group block relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 cursor-hover magnetic-target"
+              data-cursor="dark"
+              aria-label={`visit ${project.title} website`}
+              className="group block relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 cursor-hover magnetic-target"
             >
               <div className={`h-64 md:h-80 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-                <div className="absolute top-6 right-6 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                <div className="absolute top-6 right-6 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">
                   <ExternalLink className="w-5 h-5 text-neutral-900" />
                 </div>
               </div>
@@ -63,8 +66,8 @@ export default function Portfolio() {
                 <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-700 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-neutral-600 leading-relaxed">
-                  {project.description}
+                <p className="mt-3 text-sm text-neutral-500 leading-relaxed">
+                  — {project.core}
                 </p>
               </div>
 

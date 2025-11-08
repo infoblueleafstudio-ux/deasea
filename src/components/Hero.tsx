@@ -16,7 +16,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight"
+            className="font-bonheur text-5xl md:text-8xl lg:text-[9rem] text-white tracking-wide leading-none whitespace-nowrap"
           >
             Design × Code × Emotion
           </motion.h1>

@@ -39,6 +39,15 @@ export default function Services() {
             What we do
           </h2>
           <div className="w-20 h-1 bg-neutral-900 mx-auto"></div>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            viewport={{ once: true }}
+            className="mt-8 text-neutral-600 md:text-xl leading-relaxed max-w-3xl mx-auto"
+          >
+            クライアントの「まだ言語化できていない想い」を引き出し、世界観を設計し、UI / UX に落とし込みます。
+          </motion.p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
